@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Three XP Skeleton</title>
+</head>
+<body>
+    <% htmlWebpackPlugin.options.shaders.forEach(function(shader) { %>
+        <script type='x-shader/x-<%= shader.type %>' id='<%= shader.type %>-<%= shader.name %>'>
+            <%= shader.content %>
+        </script>
+    <% }); %>
+    <canvas id="app"></canvas>
+</body>
+</html>
